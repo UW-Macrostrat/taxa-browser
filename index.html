@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PaleoDB Taxa browser</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <link href="css/bootstrapRC2.min.css" rel="stylesheet"/>
+    <link href="css/typeahead.css" rel="stylesheet"/>
+    <link href="css/taxaBrowser.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="browser">
+      <form id="taxaSearch">
+        <input type="text" class="form-control" id="taxonInput" placeholder="Enter a taxonomic name:"/>
+      </form>
+
+      <div name="focal_taxon_box">
+        <table class="table table-hover">
+          <tbody id="focalTaxonParents"></tbody>
+        </table>
+      </div>
+
+      <div class="focalTaxon" name="focal_taxon_box">
+        <table class="table table-hover">
+          <tr class="active">
+            <td>
+              <p class="taxonTitle"></p>
+              <p class="taxonAttr"></p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="taxonChildren">
+        <table class="table table-hover table-condensed">
+          <tbody id="focal_taxon_children"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="modal fade" id="subtaxaModal" tabindex="-1" role="dialog" aria-labelledby="Subtaxa" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" id="subtaxaModalHeader">
+            <input class="form-control" type="text" onkeyup="taxaBrowser.filter(this)" placeholder="Type to filter..." id="taxaFilterInput"/>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p class="subtaxaModalLegend">Taxon name (number of occurrences in the database)</p>
+            <div id="subTaxaModalList">
+              <ol class="list-unstyled" id="subtaxa"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end subtaxaModal -->
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mustache.js"></script>
+    <script src="js/typeahead.min.js"></script>
+    <script src="js/taxaBrowser.js"></script>
+
+  </body>
+</html>
