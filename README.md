@@ -6,4 +6,4 @@ Explore the taxonomy of [the Paleobiology Database](http://paleobiodb.org). This
 A live demo can be found here: http://uw-macrostrat.github.io/taxa-browser
 
 ### Funding
-Development supported by NSF CAREER EAR-0949416.
+Development supported by NSF EAR-0949416.
